@@ -105,6 +105,7 @@ function Combin_All() {
   export MONEYTREE_SHARECODES=$(Combin_Sub ForOtherTree)
   export JDZOO_SHARECODES=$(Combin_Sub ForOtherZoo)
   export JDSUMMERSH_SHARECODES=$(Combin_Sub ForOtherSummer)
+  export CITY_SHARECODES=$(Combin_Sub ForOtherCity)
 }
 
 ## 转换JD_BEAN_SIGN_STOP_NOTIFY或JD_BEAN_SIGN_NOTIFY_SIMPLE
