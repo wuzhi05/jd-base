@@ -461,24 +461,6 @@ ForOtherCfd4=""
 ForOtherCfd5=""
 ForOtherCfd6=""
 
-################################## 定义jd_City活动互助（选填） ##################################
-## 具体填法及要求详见本文件最下方“互助码填法示例”
-MyCity1=""
-MyCity2=""
-MyCity3=""
-MyCity4=""
-MyCity5=""
-MyCity6=""
-MyCityA=""
-MyCityB=""
-
-ForOtherCity1=""
-ForOtherCity2=""
-ForOtherCity3=""
-ForOtherCity4=""
-ForOtherCity5=""
-ForOtherCity6=""
-
 
 ################################## 定义jd_exchangejxbeans兑换喜豆开关（选填） ##################################
 ## 可自动将七天内过期的京豆兑换为喜豆默认关闭
