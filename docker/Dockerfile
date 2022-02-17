@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:15.9.0-alpine3.12
 ARG JD_BASE_URL=https://ghproxy.com/https://github.com/wuzhi05/jd-base
 ARG JD_BASE_BRANCH=main
 ARG JD_SCRIPTS_URL=https://ghproxy.com/https://github.com/wuzhi05/MyActions
