@@ -25,8 +25,21 @@ SendCount=${ShellDir}/send_count
 isTermux=${ANDROID_RUNTIME_ROOT}${ANDROID_ROOT}
 ShellURL=https://wuzhi.wuzhi.workers.dev/https://github.com/wuzhi05/jd-base
 ScriptsURL=https://wuzhi.wuzhi.workers.dev/https://github.com/wuzhi05/MyActions
+
 ## 更新crontab，gitee服务器同一时间限制5个链接，因此每个人更新代码必须错开时间，每次执行git_pull随机生成。
 ## 每天次数随机，更新时间随机，更新秒数随机，至少6次，至多12次，大部分为8-10次，符合正态分布。
+function replaceGitURL {
+ currentShellURL=`cd $ShellDir && git remote get-url --push origin`
+ if [ $ShellURL != $currentShellURL ];then
+   cd $ShellDir && git remote remove origin && git remote add origin $ShellURL
+ fi
+
+ currentScriptURL=`cd $ScriptsDir && git remote get-url --push origin`
+ if [ $ScriptsURL != $currentScriptURL ];then
+   rm -rf $ScriptsDir
+ fi
+
+}
 function Update_Cron {
   if [ -f ${ListCron} ]; then
         RanMin=$((${RANDOM} % 60))
@@ -161,7 +174,7 @@ function Notify_Version {
   ## 识别出两个文件的版本号
   VerConfSample=$(grep " Version: " ${FileConfSample} | perl -pe "s|.+v((\d+\.?){3})|\1|")
   [ -f ${FileConf} ] && VerConf=$(grep " Version: " ${FileConf} | perl -pe "s|.+v((\d+\.?){3})|\1|")
-  
+
   ## 删除旧的发送记录文件
   [ -f "${SendCount}" ] && [[ $(cat ${SendCount}) != ${VerConfSample} ]] && rm -f ${SendCount}
 
@@ -329,6 +342,7 @@ echo -e "\nJS脚本目录：${ScriptsDir}\n"
 echo -e "--------------------------------------------------------------\n"
 
 ## 更新shell，更新docker-entrypoint, crontab
+replaceGitURL
 Git_PullShell
 Update_Entrypoint
 [[ ${ExitStatusShell} -eq 0 ]] && echo -e "更新shell成功...\n" || echo -e "更新shell失败，请检查原因...\n"
