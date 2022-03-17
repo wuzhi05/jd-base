@@ -104,6 +104,7 @@ function Combin_All() {
   export JDHEALTH_SHARECODES=$(Combin_Sub ForOtherhealth)
   export MONEYTREE_SHARECODES=$(Combin_Sub ForOtherTree)
   export CITY_SHARECODES=$(Combin_Sub ForOtherCity)
+  export Xbox_Token=$(Combin_Sub XboxToken)
 }
 
 ## 转换JD_BEAN_SIGN_STOP_NOTIFY或JD_BEAN_SIGN_NOTIFY_SIMPLE
