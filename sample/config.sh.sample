@@ -1,6 +1,6 @@
-## Version: v3.56.0
-## Date: 2022-1-9
-## Update Content: 定义CITY_SHARECODES环境变量，依旧是老规矩自行决定助力顺序（配置文件不会自动智能替换，需要手动进入面板通过对比工具手动替换）
+## Version: v3.57.0
+## Date: 2022-3-27
+## Update Content: 定义JD_PAY_CONTRACT环境变量，用处为自动检查并关停免密支付，默认不开启（配置文件不会自动智能替换，需要手动进入面板通过对比工具手动替换）
 
 ## 上面版本号中，如果第2位数字有变化，那么代表增加了新的参数，如果只有第3位数字有变化，仅代表更新了注释，没有增加新的参数，可更新可不更新
 
@@ -183,24 +183,11 @@ ForOtherCity4=""
 ForOtherCity5=""
 ForOtherCity6=""
 
-################################## 定义jd_moneytree互助（临时） ##################################
-## 具体填法及要求详见本文件最下方“互助码填法示例”
-MyTree1=""
-MyTree2=""
-MyTree3=""
-MyTree4=""
-MyTree5=""
-MyTree6=""
-MyTreeA=""
-MyTreeB=""
+################################## 定义JD_PAY_CONTRACT ##################################
+## 默认未启用检查并停用免密支付,如需启用请改为JD_PAY_CONTRACT="true"
+## 如果有个别账户需要跳过检查,请添加JD_PAY_CONTRACT_IGNORE="pin",提示：多个账户请多次添加,pin为你的cookie里的pin用&隔开
 
-ForOtherTree1=""
-ForOtherTree2=""
-ForOtherTree3=""
-ForOtherTree4=""
-ForOtherTree5=""
-ForOtherTree6=""
-
+export JD_PAY_CONTRACT="false"
 
 ################################## 定义jd_health互助（临时） ##################################
 ## 具体填法及要求详见本文件最下方“互助码填法示例”
