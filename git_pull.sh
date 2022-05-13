@@ -33,10 +33,10 @@ function replaceGitURL {
  if [ $ShellURL != $currentShellURL ];then
    cd $ShellDir && git remote remove origin && git remote add origin $ShellURL
  fi
- 
+
  currentScriptURL=`cd $ScriptsDir && git remote get-url --push origin`
  if [ $ScriptsURL != $currentScriptURL ];then
-   cd $ScriptsDir && git remote remove origin && git remote add origin $ScriptsURL
+   rm -rf $ScriptsDir
  fi
 
 }
