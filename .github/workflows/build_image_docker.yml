@@ -14,9 +14,9 @@ jobs:
         uses: ilteoood/docker_buildx@master
         with:
           publish: true
-          imageName: shuye72/jd-basetest
+          imageName: shuye72/jd-base
           dockerFile: docker/Dockerfile
           platform: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
-          tag: test
+          tag: gitee
           dockerUser: ${{ secrets.DOCKER_USERNAME }}
           dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
